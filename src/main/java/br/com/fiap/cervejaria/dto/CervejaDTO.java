@@ -1,5 +1,7 @@
 package br.com.fiap.cervejaria.dto;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Past;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
@@ -9,7 +11,9 @@ public class CervejaDTO {
     private String marca;
     private Double teorAlcoolico;
     private Tipo tipo;
+    @Min(1)
     private BigDecimal preco;
+    @Past
     private ZonedDateTime dataLancamento;
 
     public CervejaDTO() {}
