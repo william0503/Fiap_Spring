@@ -1,5 +1,7 @@
 package br.com.fiap.cervejaria.dto;
 
+import br.com.fiap.cervejaria.entity.Cerveja;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 import java.math.BigDecimal;
@@ -34,6 +36,15 @@ public class CervejaDTO {
         this.tipo = createCervejaDTO.getTipo();
         this.preco = createCervejaDTO.getPreco();
         this.dataLancamento = createCervejaDTO.getDataLancamento();
+    }
+
+    public CervejaDTO(Cerveja cerveja) {
+        this.id = cerveja.getId();
+        this.marca = cerveja.getMarca();
+        this.teorAlcoolico = cerveja.getTeorAlcoolico();
+        this.tipo = cerveja.getTipo();
+        this.preco = cerveja.getPreco();
+        this.dataLancamento = cerveja.getDataLancamento();
     }
 
     public Integer getId() {
